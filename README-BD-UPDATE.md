@@ -38,3 +38,10 @@ The storefront now includes cat, dog, bird, fish, rabbit, hamster and treats cat
 - Upgraded the visible storefront control from Bag to Cart and verified quantity, remove, clear-cart, subtotal and localStorage flows in code.
 - Product cards and product details both use the same Add to cart action path; Buy now adds the item and opens checkout.
 - Dog and small-pet category shortcut buttons are wired.
+
+## Customer Voice update
+- Customer Voice now contains a written comment/review form and a live browser voice-mail recorder in the same section.
+- Voice messages can be recorded, previewed, deleted, and sent to `/api/voicemails` when `PANTRY_API_BASE` is configured.
+- On a GitHub Pages/static-only deployment, the Save voicemail action downloads the recording locally and keeps a lightweight local outbox record instead of pretending it reached the shop server.
+- Optional customer name and Bangladesh phone number fields are supported for voice messages.
+- Admin endpoints are available for reading recent reviews and voicemail metadata when the backend is protected with `ADMIN_TOKEN`.

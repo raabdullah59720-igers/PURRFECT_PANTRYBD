@@ -157,10 +157,13 @@
 
     <section class="section reviews" id="reviews">
       <div class="container">
-        <div class="section-head compact"><div><p class="eyebrow">Customer voice</p><h2>Reviews from the Pantry community.</h2></div><p class="section-intro">Share a product experience, leave a public comment, or record a short voice message for the shop team.</p></div>
-        <div class="reviews-layout">
+        <div class="section-head compact">
+          <div><p class="eyebrow">Customer voice</p><h2>Tell us what you think.</h2></div>
+          <p class="section-intro">Leave a written comment or use your microphone to send the shop a short voice message. Your words stay close to the customer experience.</p>
+        </div>
+        <div class="reviews-layout customer-voice-grid">
           <div class="review-form-card">
-            <div class="card-kicker">Write a review</div>
+            <div class="card-kicker">Customer comment</div>
             <form id="reviewForm" class="review-form">
               <div class="form-row-two">
                 <label>Name<input id="reviewName" name="name" required maxlength="60" autocomplete="name" placeholder="Your name"></label>
@@ -168,25 +171,27 @@
               </div>
               <label>Product (optional)<input id="reviewProduct" name="product" maxlength="80" placeholder="Product name"></label>
               <label>Your comment<textarea id="reviewComment" name="comment" required maxlength="500" rows="5" placeholder="Tell other customers what you liked..."></textarea></label>
-              <div class="review-form-foot"><span id="reviewCharCount" class="tiny-note">0 / 500</span><button class="btn btn-primary" type="submit">Post review</button></div>
+              <div class="review-form-foot"><span id="reviewCharCount" class="tiny-note">0 / 500</span><button class="btn btn-primary" type="submit">Post comment</button></div>
             </form>
           </div>
-          <div class="review-list-card">
-            <div class="list-head"><div><div class="card-kicker">Recent reviews</div><p id="reviewSummary" class="tiny-note">No customer reviews yet.</p></div><button class="text-btn" id="clearMyReviews" type="button">Clear my reviews</button></div>
+
+          <div class="voicemail-card customer-voice-record">
+            <div class="card-kicker">Voice mail</div>
+            <p class="voice-intro">Prefer speaking? Record a short message, listen back, then send it to the shop when the API is connected. Without an API, the Save button keeps a downloadable local copy on this device.</p>
+            <div class="voice-fields">
+              <label>Name (optional)<input id="voiceName" maxlength="60" autocomplete="name" placeholder="Your name"></label>
+              <label>Phone (optional)<input id="voicePhone" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+            </div>
+            <div class="voice-status"><span class="voice-dot" id="voiceDot"></span><strong id="voiceStatus">Ready to record</strong><span id="voiceTimer" class="voice-timer">00:00</span></div>
+            <div class="voice-actions"><button class="btn btn-primary" id="voiceStart" type="button">● Start recording</button><button class="btn outline" id="voiceStop" type="button" disabled>■ Stop</button><button class="btn outline" id="voiceSend" type="button" disabled>Save voicemail</button><button class="btn outline" id="voiceDelete" type="button" disabled>Delete</button></div>
+            <audio id="voicePlayback" controls hidden></audio>
+            <p id="voiceNote" class="tiny-note">Up to 60 seconds. Microphone permission is required. Keep the page open while recording.</p>
+          </div>
+
+          <div class="review-list-card customer-voice-recent">
+            <div class="list-head"><div><div class="card-kicker">Recent customer comments</div><p id="reviewSummary" class="tiny-note">No customer reviews yet.</p></div><button class="text-btn" id="clearMyReviews" type="button">Clear my comments</button></div>
             <div id="reviewList" class="review-list" aria-live="polite"></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section voicemail-section">
-      <div class="container voicemail-layout">
-        <div><p class="eyebrow">Voice support</p><h2>Leave a voicemail.</h2><p class="section-intro">Record a short voice note using your device microphone. You can review it before sending; the recording stays available on this page until you delete it or send it.</p></div>
-        <div class="voicemail-card">
-          <div class="voice-status"><span class="voice-dot" id="voiceDot"></span><strong id="voiceStatus">Ready to record</strong><span id="voiceTimer" class="voice-timer">00:00</span></div>
-          <div class="voice-actions"><button class="btn btn-primary" id="voiceStart" type="button">● Start recording</button><button class="btn outline" id="voiceStop" type="button" disabled>■ Stop</button><button class="btn outline" id="voiceSend" type="button" disabled>Send voicemail</button><button class="btn outline" id="voiceDelete" type="button" disabled>Delete</button></div>
-          <audio id="voicePlayback" controls hidden></audio>
-          <p id="voiceNote" class="tiny-note">Maximum recommended message length: 60 seconds. Microphone permission is required.</p>
         </div>
       </div>
     </section>
