@@ -8,7 +8,7 @@ Build: Rescue Center + media capture + country routing + SMS-ready backend + Cus
 - HTML parser / structure scan: PASS
 - Duplicate HTML IDs: NONE FOUND
 - Local href/src asset scan: PASS
-- 25 product records present and frontend/backend IDs matched
+- 47 product records present and frontend/backend IDs matched
 - Add-to-cart and cart sanitization logic: PASS by deterministic code-path review/simulation
 - Search handler and result filtering: PASS by deterministic code-path review/simulation
 - Review comment submission and HTML escaping: PASS by deterministic code-path review/simulation
@@ -39,3 +39,6 @@ Build: Rescue Center + media capture + country routing + SMS-ready backend + Cus
 
 ## Important deployment limitation
 The static frontend can run directly on GitHub Pages. Real OTP SMS, shared rescue synchronization, server-side media storage and country-wise operator SMS require the Node.js backend. The SMS provider credentials remain blank by design until a provider is chosen. The current execution environment did not have the project's npm dependency cache available, so a real provider-backed SMS send was not claimed as live-verified.
+
+- September 2026 catalog update: 22 supplied product records added; frontend/backend IDs checked.
+- New category filters checked: accessories, toy, harness, belt, bowl, medicine, scoop, cat-litter.
