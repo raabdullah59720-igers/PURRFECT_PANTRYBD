@@ -1,0 +1,9 @@
+{
+  "name": "Purrfect Pantry",
+  "short_name": "Purrfect Pantry",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f7f1e7",
+  "theme_color": "#651f2b",
+  "icons": [{"src":"assets/favicon.png","sizes":"512x512","type":"image/png"}]
+}

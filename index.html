@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-BD">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#651f2b" />
+  <meta name="description" content="Purrfect Pantry is a premium Bangladesh-focused pet-food store for cats and birds, built for easy discovery, trustworthy ordering and future product expansion." />
+  <meta property="og:title" content="Purrfect Pantry | Premium Pet Food" />
+  <meta property="og:description" content="Curated cat food and bird food with a refined, easy-to-shop experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Purrfect Pantry | Premium Cat & Bird Food</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">Curated for cats & birds · Bangladesh-wide ordering flow · New collection arriving soon</div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <button class="icon-btn mobile-menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <a class="brand" href="#top" aria-label="Purrfect Pantry home">
+        <img src="assets/logo.png" alt="Purrfect Pantry" />
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#shop">Shop</a>
+        <a href="#cats">Cat Food</a>
+        <a href="#birds">Bird Food</a>
+        <a href="#offers">Offers</a>
+        <a href="#why">Why Purrfect</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" type="button" aria-label="Search products">⌕</button>
+        <button class="cart-btn" id="cartOpen" type="button" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="#shop">Shop</a><a href="#cats">Cat Food</a><a href="#birds">Bird Food</a><a href="#offers">Offers</a><a href="#why">Why Purrfect</a><a href="#contact">Contact</a>
+    </div>
+    <div class="searchbar" id="searchBar" hidden>
+      <div class="container searchbar-inner">
+        <input id="searchInput" type="search" placeholder="Search food, brand, weight..." autocomplete="off" />
+        <button class="text-btn" id="searchClose">Close</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-media" role="img" aria-label="Premium Mediterranean-inspired setting with a cat and bird beside pet food bowls"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Purrfect Pantry · Bangladesh</p>
+        <h1>Good food, beautifully<br /><em>chosen.</em></h1>
+        <p class="hero-copy">Premium everyday nutrition for cats and birds, curated into one calm, trustworthy shopping experience.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#shop">Shop the pantry</a>
+          <a class="btn btn-ghost" href="#cats">Explore cat food</a>
+        </div>
+        <div class="hero-note"><span class="status-dot"></span> Fresh storefront · Easy ordering · Built to grow</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div><strong>01</strong><span>Cat-first curation</span></div>
+        <div><strong>02</strong><span>Bird essentials</span></div>
+        <div><strong>03</strong><span>Clear pricing</span></div>
+        <div><strong>04</strong><span>Simple checkout</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Shop the pantry</p><h2>Start with what your pet loves.</h2></div>
+          <p class="section-intro">Cat Food and Bird Food are the launch categories. The structure is ready for dog, rabbit, accessories, grooming and toys later.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card cat-card" id="cats">
+            <div class="category-art" aria-hidden="true"><span class="art-cat">♞</span></div>
+            <div class="category-body"><p class="eyebrow">Primary category</p><h3>Cat Food</h3><p>Dry food, wet meals, kitten-friendly options and everyday staples.</p><button class="arrow-btn filter-cat" data-category="cat">Shop cat food <span>↗</span></button></div>
+          </article>
+          <article class="category-card bird-card" id="birds">
+            <div class="category-art" aria-hidden="true"><span class="art-bird">✦</span></div>
+            <div class="category-body"><p class="eyebrow">Primary category</p><h3>Bird Food</h3><p>Seed blends, daily feed and simple essentials for companion birds.</p><button class="arrow-btn filter-bird" data-category="bird">Shop bird food <span>↗</span></button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="featured">
+      <div class="container">
+        <div class="section-head compact">
+          <div><p class="eyebrow">Curated shelf</p><h2>Featured products</h2></div>
+          <a class="text-link" href="#all-products">View all products ↗</a>
+        </div>
+        <div class="filter-row" id="all-products">
+          <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="cat">Cat Food</button><button class="filter" data-filter="bird">Bird Food</button><button class="filter" data-filter="kitten">Kitten</button><button class="filter" data-filter="seed">Seed Mix</button>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>No products match that search yet.</div>
+      </div>
+    </section>
+
+    <section class="section offer" id="offers">
+      <div class="container offer-inner">
+        <div><p class="eyebrow">Featured offer</p><h2>Build a calmer refill routine.</h2><p>Keep this offer area ready for your first verified promotion, bundle, or seasonal campaign.</p></div>
+        <div class="offer-card"><span>Offer zone</span><strong>Ready</strong><small>Add your verified promotion here before launch.</small><a href="#shop" class="btn btn-secondary">Browse products</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">Why Purrfect Pantry</p><h2>Trust, without the theatre.</h2></div><p class="section-intro">The storefront is designed to reduce hesitation from Facebook and Instagram traffic: clear categories, visible prices, human support and a checkout that stays simple.</p></div>
+        <div class="benefit-grid">
+          <article><span class="benefit-no">01</span><h3>Curated, not crowded</h3><p>Launch categories stay focused so shoppers can find the right shelf quickly.</p></article>
+          <article><span class="benefit-no">02</span><h3>Bangladesh-ready</h3><p>Checkout is prepared for COD first, with bKash and Nagad integration points reserved for the next phase.</p></article>
+          <article><span class="benefit-no">03</span><h3>Designed to scale</h3><p>Future animal categories can be added as data, not as a redesign.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delivery-section">
+      <div class="container delivery-grid">
+        <div class="delivery-copy"><p class="eyebrow">Delivery & ordering</p><h2>A familiar checkout for Bangladesh.</h2><p>Keep the final step clean: select items, confirm quantity, add delivery details, then review the order before submission.</p><div class="payment-pills"><span>Cash on Delivery</span><span>bKash slot</span><span>Nagad slot</span></div></div>
+        <div class="delivery-panel"><div><strong>Order status</strong><span class="live-pill"><i></i> storefront ready</span></div><p>Real payment processing should be connected only after merchant credentials and delivery rules are configured.</p><div class="mini-rule"></div><p class="fine">No fake payment badge. No invented delivery promise. Just a clear handoff to the next implementation stage.</p></div>
+      </div>
+    </section>
+
+    <section class="section reviews">
+      <div class="container">
+        <div class="section-head compact"><div><p class="eyebrow">Customer voice</p><h2>Reviews, when they are real.</h2></div></div>
+        <div class="review-placeholder"><span>✦</span><div><strong>Customer reviews module ready</strong><p>Connect verified reviews or your Facebook/Instagram feedback here instead of using fabricated testimonials.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section newsletter" id="contact">
+      <div class="container newsletter-inner"><div><p class="eyebrow">Stay close</p><h2>New stock, offers & care notes.</h2><p>Use this space later for email, Messenger or WhatsApp lead capture.</p></div><form id="newsletterForm"><input type="email" required placeholder="Your email address" aria-label="Email address"><button class="btn btn-primary" type="submit">Join the list</button></form></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Purrfect Pantry"><p>Premium pet food for cats and birds, thoughtfully presented for Bangladesh.</p><div class="social-links"><a href="#" aria-label="Facebook">Facebook</a><a href="#" aria-label="Instagram">Instagram</a></div></div>
+      <div><h4>Shop</h4><a href="#cats">Cat Food</a><a href="#birds">Bird Food</a><a href="#offers">Offers</a></div>
+      <div><h4>Help</h4><a href="delivery.html">Delivery</a><a href="returns.html">Returns & Refunds</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+      <div><h4>Contact</h4><p>Bangladesh</p><p>Customer care slot ready</p><a href="#contact">Start a conversation ↗</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Purrfect Pantry</span><span>Built for a faster, cleaner pet-food storefront.</span></div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">Your bag</p><h2>Order summary</h2></div><button class="icon-btn" id="cartClose" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="drawer-foot"><div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">৳0</strong></div><button class="btn btn-primary btn-block" id="checkoutOpen">Proceed to checkout</button><button class="text-btn btn-block" id="clearCart">Clear bag</button></div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <dialog class="modal" id="productModal"><button class="icon-btn modal-close" id="productModalClose" aria-label="Close product">×</button><div id="productModalBody"></div></dialog>
+  <dialog class="modal checkout-modal" id="checkoutModal"><button class="icon-btn modal-close" id="checkoutClose" aria-label="Close checkout">×</button><div class="checkout-grid"><div><p class="eyebrow">Secure-style review</p><h2>Confirm your order</h2><p class="muted">This launch build stores the basket in your browser. Connect your real payment gateway and delivery rules before accepting live payments.</p><form id="checkoutForm"><label>Full name<input required name="name" autocomplete="name"></label><label>Mobile number<input required name="phone" inputmode="tel" autocomplete="tel"></label><label>Delivery address<textarea required name="address" rows="4" autocomplete="street-address"></textarea></label><label>Payment preference<select name="payment"><option>Cash on Delivery</option><option>bKash</option><option>Nagad</option></select></label><button class="btn btn-primary btn-block" type="submit">Place order request</button></form></div><div class="checkout-summary"><p class="eyebrow">Bag</p><div id="checkoutSummary"></div><div class="total-row"><span>Total</span><strong id="checkoutTotal">৳0</strong></div></div></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
