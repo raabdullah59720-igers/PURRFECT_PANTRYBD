@@ -38,6 +38,7 @@
         <a href="#birds">Bird Food</a>
         <a href="#shop">All Food</a>
         <a href="#offers">Offers</a>
+        <a href="#rescue">Rescue</a>
         <a href="#why">Why Purrfect</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -47,7 +48,7 @@
       </div>
     </div>
     <div class="mobile-nav" id="mobileNav" hidden>
-      <a href="#shop">Shop</a><a href="#cats">Cat Food</a><a href="#birds">Bird Food</a><a href="#offers">Offers</a><a href="#why">Why Purrfect</a><a href="#contact">Contact</a>
+      <a href="#shop">Shop</a><a href="#cats">Cat Food</a><a href="#birds">Bird Food</a><a href="#offers">Offers</a><a href="#rescue">Rescue</a><a href="#why">Why Purrfect</a><a href="#contact">Contact</a>
     </div>
     <div class="searchbar" id="searchBar" hidden>
       <div class="container searchbar-inner">
@@ -106,6 +107,7 @@
             <div class="category-body"><p class="eyebrow">Pet category</p><h3>Fish & Small Pets</h3><p>Fish food, rabbit hay, hamster mixes and training treats.</p><button class="arrow-btn filter-small">Shop small-pet food <span>↗</span></button></div>
           </article>
         </div>
+      </div>
     </section>
 
     <section class="section soft" id="featured">
@@ -196,6 +198,61 @@
       </div>
     </section>
 
+    <section class="section rescue-section" id="rescue">
+      <div class="container">
+        <div class="section-head compact">
+          <div><p class="eyebrow">Rescue center</p><h2>Mark an animal that needs help.</h2></div>
+          <p class="section-intro">For an injured or vulnerable cat, dog or bird, place a rescue marker on the map, share the situation, and let other helpers see where assistance is needed.</p>
+        </div>
+        <div class="rescue-layout">
+          <div class="rescue-map-card">
+            <div class="map-toolbar">
+              <div><div class="card-kicker">Live rescue map</div><p id="rescueMapHint" class="tiny-note">Click the map to place a marker, or use your device location.</p></div>
+              <div class="map-actions"><button class="btn outline" id="rescueLocate" type="button">Use my location</button><button class="text-btn" id="rescueResetMap" type="button">Bangladesh view</button></div>
+            </div>
+            <div id="rescueMap" class="rescue-map" aria-label="Rescue map for cat, dog and bird help requests"></div>
+            <div id="rescueMapFallback" class="rescue-map-fallback" hidden>
+              <strong>Map library could not load.</strong>
+              <span>You can still submit a rescue request using the latitude and longitude fields below.</span>
+            </div>
+            <div class="rescue-legend"><span><i class="legend-dot cat"></i>Cat</span><span><i class="legend-dot dog"></i>Dog</span><span><i class="legend-dot bird"></i>Bird</span><span><i class="legend-dot urgent"></i>Urgent</span></div>
+          </div>
+
+          <div class="rescue-form-card">
+            <div class="card-kicker">Create rescue marker</div>
+            <form id="rescueForm" class="rescue-form">
+              <div class="form-row-two">
+                <label>Animal<select id="rescueAnimal" name="animal" required><option value="cat">Cat</option><option value="dog">Dog</option><option value="bird">Bird</option></select></label>
+                <label>Urgency<select id="rescueUrgency" name="urgency" required><option value="urgent">Urgent</option><option value="high">High</option><option value="normal">Needs help</option></select></label>
+              </div>
+              <label>What happened?<textarea id="rescueDescription" name="description" required maxlength="500" rows="4" placeholder="Example: injured street cat near the pharmacy entrance..."></textarea></label>
+              <div class="form-row-two">
+                <label>Contact name (optional)<input id="rescueName" name="name" maxlength="60" autocomplete="name" placeholder="Your name"></label>
+                <label>Phone (optional)<input id="rescuePhone" name="phone" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+              </div>
+              <div class="form-row-two">
+                <label>Latitude<input id="rescueLat" name="lat" type="number" step="any" min="-90" max="90" placeholder="Map click fills this"></label>
+                <label>Longitude<input id="rescueLng" name="lng" type="number" step="any" min="-180" max="180" placeholder="Map click fills this"></label>
+              </div>
+              <label>Place note (optional)<input id="rescuePlace" name="place" maxlength="120" placeholder="Road, market, landmark or area"></label>
+              <div class="rescue-submit-row"><span class="tiny-note">Please share only a safe location and avoid putting private personal details in the public description.</span><button class="btn btn-primary" type="submit">Mark & request help</button></div>
+              <p id="rescueFormStatus" class="tiny-note" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="rescue-list-card">
+          <div class="list-head"><div><div class="card-kicker">Active rescue requests</div><p id="rescueSummary" class="tiny-note">No active rescue requests yet.</p></div><button class="text-btn" id="refreshRescues" type="button">Refresh markers</button></div>
+          <div id="rescueList" class="rescue-list" aria-live="polite"></div>
+        </div>
+
+        <div class="rescue-help-strip">
+          <div><strong>Need immediate help?</strong><span>Call the shop helpline and share the rescue marker location.</span></div>
+          <a class="btn btn-secondary" href="tel:+8801755800203">Helpline · 01755-800203</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section newsletter" id="contact">
       <div class="container newsletter-inner"><div><p class="eyebrow">Stay close</p><h2>New stock, offers & care notes.</h2><p>Use this space later for email, Messenger or WhatsApp lead capture.</p></div><form id="newsletterForm"><input type="email" required placeholder="Your email address" aria-label="Email address"><button class="btn btn-primary" type="submit">Join the list</button></form></div>
     </section>
@@ -222,6 +279,7 @@
   <dialog class="modal checkout-modal" id="checkoutModal"><button class="icon-btn modal-close" id="checkoutClose" aria-label="Close checkout">×</button><div class="checkout-grid"><div><p class="eyebrow">Mobile verification</p><h2>Confirm your order</h2><p class="muted">Enter your delivery details first. A six-digit OTP is requested only after your Bangladesh mobile number is validated.</p><div id="checkoutStage"><form id="checkoutForm"><label>Full name<input required name="name" autocomplete="name"></label><label>Mobile number<input required name="phone" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></label><label>Delivery address<textarea required name="address" rows="4" autocomplete="street-address"></textarea></label><label>Payment preference<select name="payment"><option>Cash on Delivery</option><option>bKash</option><option>Nagad</option></select></label><button class="btn btn-primary btn-block" type="submit">Send OTP</button></form></div><div id="otpStage" hidden><div class="otp-card"><p class="eyebrow">OTP sent</p><h3>Verify your mobile</h3><p class="muted">Enter the six-digit code sent by your configured SMS provider.</p><label>6-digit OTP<input id="otpInput" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="123456"></label><button class="btn btn-primary btn-block" id="verifyOtpBtn" type="button">Verify & place order</button><button class="text-btn btn-block" id="resendOtpBtn" type="button">Resend OTP</button><p class="tiny-note">SMS provider settings remain blank until you connect your provider.</p></div></div></div><div class="checkout-summary"><p class="eyebrow">Cart</p><div id="checkoutSummary"></div><div class="total-row"><span>Total</span><strong id="checkoutTotal">৳0</strong></div></div></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script>window.PANTRY_API_BASE="";</script><script src="script.js" defer></script>
+  <script>window.PANTRY_API_BASE="";</script>
+  <script src="script.js" defer></script>
 </body>
 </html>

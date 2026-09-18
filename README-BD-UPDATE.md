@@ -45,3 +45,14 @@ The storefront now includes cat, dog, bird, fish, rabbit, hamster and treats cat
 - On a GitHub Pages/static-only deployment, the Save voicemail action downloads the recording locally and keeps a lightweight local outbox record instead of pretending it reached the shop server.
 - Optional customer name and Bangladesh phone number fields are supported for voice messages.
 - Admin endpoints are available for reading recent reviews and voicemail metadata when the backend is protected with `ADMIN_TOKEN`.
+
+
+## Rescue Center update
+- Added a Rescue Center for injured or vulnerable cats, dogs and birds.
+- Visitors can click the map or use browser geolocation to set a rescue marker.
+- Each request stores animal type, urgency, description, optional contact details, place note, and coordinates.
+- Active rescue markers are shown on the map with urgency-aware pins and a recent request list.
+- Static GitHub Pages mode stores rescue requests locally in the browser. When `PANTRY_API_BASE` is connected, requests sync to `/api/rescues` for shared server-side visibility.
+- Map uses a pinned Leaflet 1.9.4 client and OpenStreetMap tiles. The Leaflet client loads after the storefront starts, so a blocked/slow map library does not prevent the shop from opening. If the map library is unavailable, the form remains usable with manual coordinates.
+- Public rescue responses intentionally omit reporter name and phone; protected admin rescue data retains them for the connected rescue team.
+- Public rescue descriptions should not contain private or unnecessary personal information.

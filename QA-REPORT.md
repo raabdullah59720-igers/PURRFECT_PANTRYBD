@@ -1,22 +1,54 @@
-# Purrfect Pantry QA Report
+# Purrfect Pantry Final QA Report
 
-Build: Customer Voice + Review + Voicemail + Cart + Search final update
+Build: Rescue Center + Customer Voice + Review + Voicemail + Cart + Search + Helpline
 
-Validated:
-- JavaScript syntax: PASS
+## Verified
+- Frontend JavaScript syntax: PASS
 - Backend JavaScript syntax: PASS
 - HTML parsing: PASS
 - Duplicate HTML IDs: NONE FOUND
-- Local asset references: PASS
-- Static HTTP serving: PASS (200 responses for index, CSS, JS, logo, favicon, manifest and policy pages)
+- Local asset/reference scan: PASS
 - Product catalogue parity: 25 frontend / 25 backend, IDs matched
-- Add-to-cart logic simulation: PASS
-- Search simulation: PASS, Chicken query returns 3 matching products
-- Review submission/local fallback simulation: PASS
-- Review HTML escaping/XSS-safe rendering: PASS
-- Voicemail data URL conversion path: PASS
-- Bangladesh helpline link present: 01755-800203
+- Add-to-cart logic: PASS by deterministic functional simulation
+- Search logic: PASS by deterministic functional simulation
+- Review submission and local fallback: PASS by deterministic functional simulation
+- Review HTML escaping: PASS
+- Voicemail blob-to-data processing path: PASS
+- Rescue request validation and local submission path: PASS
+- Rescue animal options: cat, dog, bird
+- Rescue urgency options: urgent, high, needs help
+- Rescue public API response removes reporter name/phone: PASS by code inspection
+- Bangladesh helpline link: 01755-800203
+- Mini logo, favicon and manifest icons exist with matching PNG dimensions: PASS
+- Static local HTTP serving: PASS
 - ZIP integrity: PASS
 
-Environment limitation:
-The provided execution environment blocks Chromium navigation to local/file URLs and does not contain cached npm packages, so a full interactive real-browser checkout and live Express/SMS-provider test could not be completed here. Those are environment limitations, not reported as application failures. SMS delivery still requires a configured provider.
+## Regression fixes in this build
+- Added cart sanitization so stale/invalid localStorage cart entries cannot crash checkout.
+- Added safe handling for an invalid product ID in the product details modal.
+- Checkout summary now skips stale cart entries safely and shows an empty-cart message when necessary.
+
+## Static server run
+The storefront was served with Python's built-in HTTP server and the following public files returned HTTP 200:
+- index.html
+- styles.css
+- script.js
+- assets/logo.png
+- assets/logo-mark.png
+- assets/favicon.png
+- assets/hero.jpg
+- assets/hero-mobile.jpg
+- assets/og-cover.jpg
+- site.webmanifest
+- robots.txt
+- sitemap.xml
+- delivery.html
+- returns.html
+- terms.html
+- privacy.html
+- admin.html
+
+## Environment limitation
+The execution environment does not contain the project's npm dependencies, so the Express backend itself could not be started here without installing external packages. The static storefront was successfully served and checked. Real SMS delivery, shared review/voicemail submission and shared rescue synchronization require the Node backend plus the appropriate provider/API configuration.
+
+System Chromium is available, but this execution environment blocks reliable full interactive browser navigation. Because of that, browser click-through is not represented as a successful end-to-end production test. Functional paths were additionally checked with deterministic simulations and static code analysis.
