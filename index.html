@@ -235,6 +235,17 @@
                 <label>Longitude<input id="rescueLng" name="lng" type="number" step="any" min="-180" max="180" placeholder="Map click fills this"></label>
               </div>
               <label>Place note (optional)<input id="rescuePlace" name="place" maxlength="120" placeholder="Road, market, landmark or area"></label>
+
+              <div class="rescue-media-box">
+                <div class="rescue-media-head"><div><div class="card-kicker">Photo / live video</div><p class="tiny-note">Attach a photo or a short video so the rescue team can understand the situation. A live camera preview is available on supported devices.</p></div><span id="rescueMediaState" class="media-badge">No media</span></div>
+                <div class="rescue-media-actions"><label class="btn outline media-file-label" for="rescueMediaInput">Choose photo/video</label><input id="rescueMediaInput" name="media" type="file" accept="image/*,video/*" capture="environment" hidden><button class="btn outline" id="rescueCameraOpen" type="button">Open live camera</button><button class="btn outline" id="rescueCameraClose" type="button" hidden>Close camera</button></div>
+                <div id="rescueLiveCamera" class="rescue-live-camera" hidden><video id="rescueCameraPreview" autoplay playsinline muted></video><div class="live-camera-actions"><button class="btn btn-primary" id="rescueTakePhoto" type="button">Take photo</button><button class="btn outline" id="rescueRecordVideo" type="button">Record video</button><button class="btn outline" id="rescueStopVideo" type="button" disabled>Stop recording</button></div></div>
+                <div id="rescueMediaPreview" class="rescue-media-preview" hidden></div>
+                <p id="rescueMediaHint" class="tiny-note">Photo is compressed in the browser before upload. Short video recording is limited to 15 seconds.</p>
+              </div>
+
+              <div class="rescue-route-card"><div><div class="card-kicker">Automatic country routing</div><p id="rescueCountryStatus" class="tiny-note">Choose a map location to detect the country and match configured rescue operators.</p></div><span id="rescueOperatorStatus" class="route-badge">Routing ready</span></div>
+
               <div class="rescue-submit-row"><span class="tiny-note">Please share only a safe location and avoid putting private personal details in the public description.</span><button class="btn btn-primary" type="submit">Mark & request help</button></div>
               <p id="rescueFormStatus" class="tiny-note" aria-live="polite"></p>
             </form>

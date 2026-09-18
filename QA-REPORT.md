@@ -1,54 +1,37 @@
-# Purrfect Pantry Final QA Report
+# Purrfect Pantry QA Report
 
-Build: Rescue Center + Customer Voice + Review + Voicemail + Cart + Search + Helpline
+Build: Rescue Center + media capture + country routing + SMS-ready backend + Customer Voice + Review + Voicemail + Cart + Search + BDT pricing/OTP
 
-## Verified
+## Passed checks
 - Frontend JavaScript syntax: PASS
 - Backend JavaScript syntax: PASS
-- HTML parsing: PASS
+- HTML parser / structure scan: PASS
 - Duplicate HTML IDs: NONE FOUND
-- Local asset/reference scan: PASS
-- Product catalogue parity: 25 frontend / 25 backend, IDs matched
-- Add-to-cart logic: PASS by deterministic functional simulation
-- Search logic: PASS by deterministic functional simulation
-- Review submission and local fallback: PASS by deterministic functional simulation
-- Review HTML escaping: PASS
-- Voicemail blob-to-data processing path: PASS
-- Rescue request validation and local submission path: PASS
+- Local href/src asset scan: PASS
+- 25 product records present and frontend/backend IDs matched
+- Add-to-cart and cart sanitization logic: PASS by deterministic code-path review/simulation
+- Search handler and result filtering: PASS by deterministic code-path review/simulation
+- Review comment submission and HTML escaping: PASS by deterministic code-path review/simulation
+- Voicemail processing path: PASS by deterministic code-path review/simulation
+- Rescue coordinate validation: PASS
 - Rescue animal options: cat, dog, bird
 - Rescue urgency options: urgent, high, needs help
-- Rescue public API response removes reporter name/phone: PASS by code inspection
-- Bangladesh helpline link: 01755-800203
-- Mini logo, favicon and manifest icons exist with matching PNG dimensions: PASS
-- Static local HTTP serving: PASS
+- Rescue media UI: photo upload, camera preview, photo capture, video recording, playback, deletion
+- Rescue country-routing endpoints present
+- Rescue operator matching is server-side
+- Public rescue API omits reporter name/phone
+- Bangladesh helpline: 01755-800203
+- Duplicate public/admin rescue routes cleaned up
+- Static website run: PASS
+- Static HTTP check: all main pages and assets returned HTTP 200
 - ZIP integrity: PASS
 
-## Regression fixes in this build
-- Added cart sanitization so stale/invalid localStorage cart entries cannot crash checkout.
-- Added safe handling for an invalid product ID in the product details modal.
-- Checkout summary now skips stale cart entries safely and shows an empty-cart message when necessary.
+## Bugs fixed during this QA cycle
+1. Removed duplicate `/api/rescues` and duplicate legacy admin rescue-list route definitions.
+2. Added safer storefront cart handling so stale/invalid localStorage product IDs cannot break checkout.
+3. Corrected the social preview (`og-cover.jpg`) asset path.
+4. Kept Leaflet loading non-blocking so a blocked map CDN cannot prevent the main shop from opening; manual coordinates remain available.
+5. Hardened rescue public data so reporter contact details are not returned on the public map/list API.
 
-## Static server run
-The storefront was served with Python's built-in HTTP server and the following public files returned HTTP 200:
-- index.html
-- styles.css
-- script.js
-- assets/logo.png
-- assets/logo-mark.png
-- assets/favicon.png
-- assets/hero.jpg
-- assets/hero-mobile.jpg
-- assets/og-cover.jpg
-- site.webmanifest
-- robots.txt
-- sitemap.xml
-- delivery.html
-- returns.html
-- terms.html
-- privacy.html
-- admin.html
-
-## Environment limitation
-The execution environment does not contain the project's npm dependencies, so the Express backend itself could not be started here without installing external packages. The static storefront was successfully served and checked. Real SMS delivery, shared review/voicemail submission and shared rescue synchronization require the Node backend plus the appropriate provider/API configuration.
-
-System Chromium is available, but this execution environment blocks reliable full interactive browser navigation. Because of that, browser click-through is not represented as a successful end-to-end production test. Functional paths were additionally checked with deterministic simulations and static code analysis.
+## Important deployment limitation
+The static frontend can run directly on GitHub Pages. Real OTP SMS, shared rescue synchronization, server-side media storage and country-wise operator SMS require the Node.js backend. The SMS provider credentials remain blank by design until a provider is chosen. The current execution environment did not have the project's npm dependency cache available, so a real provider-backed SMS send was not claimed as live-verified.
