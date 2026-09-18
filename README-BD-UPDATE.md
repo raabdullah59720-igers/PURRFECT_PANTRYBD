@@ -56,3 +56,17 @@ The storefront now includes cat, dog, bird, fish, rabbit, hamster and treats cat
 - Map uses a pinned Leaflet 1.9.4 client and OpenStreetMap tiles. The Leaflet client loads after the storefront starts, so a blocked/slow map library does not prevent the shop from opening. If the map library is unavailable, the form remains usable with manual coordinates.
 - Public rescue responses intentionally omit reporter name and phone; protected admin rescue data retains them for the connected rescue team.
 - Public rescue descriptions should not contain private or unnecessary personal information.
+
+## 18 September 2026 final merge + QA
+The latest Purrfect Pantry rescue/media/SMS-ready storefront build was used as the base. The new visual layer was added without removing the existing shop, cart, OTP checkout, review, voicemail, rescue media/camera, Leaflet map and backend files.
+
+Added visual layer:
+- Italian-inspired burgundy/gold treatment around the existing Purrfect Pantry logo
+- LIVE MODE bar with Bangladesh time and refresh control
+- Animated cat/dog/bird floating hero accents over the existing Mediterranean hero artwork
+- Mobile-safe responsive behavior for the new live layer
+
+The live bar is a storefront UI indicator. Actual OTP/SMS delivery, shared rescue synchronization and operator dispatch still depend on the configured backend/provider documented in the project setup files.
+
+
+Final QA refresh: Small-pet shortcut now filters fish, rabbit, hamster and treats instead of opening the full catalogue. Browser storage calls are guarded individually so private-mode/quota failures do not break cart or review state.

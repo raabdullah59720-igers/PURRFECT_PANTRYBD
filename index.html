@@ -22,6 +22,13 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="announcement">Curated for cats, dogs, birds & small pets · Bangladesh-wide ordering flow · New collection arriving soon</div>
+  <div class="pp-livebar" role="status" aria-live="polite">
+    <div class="container pp-livebar-inner">
+      <span class="pp-live-status"><i></i><b>LIVE MODE</b><span id="ppLiveStatus">Storefront online</span></span>
+      <span class="pp-live-time">Bangladesh · <strong id="ppBdTime">--:--:--</strong></span>
+      <button id="ppRefresh" class="pp-refresh" type="button" aria-label="Refresh live storefront">↻ Refresh</button>
+    </div>
+  </div>
 
   <header class="site-header" id="top">
     <div class="container nav-wrap">
@@ -60,8 +67,14 @@
 
   <main id="main">
     <section class="hero">
-      <div class="hero-media" role="img" aria-label="Premium Mediterranean-inspired setting with a cat and bird beside pet food bowls"></div>
+      <div class="hero-media" role="img" aria-label="Premium Mediterranean-inspired setting with pet food, a cat and a bird"></div>
       <div class="hero-overlay"></div>
+      <div class="hero-pet-layer" aria-hidden="true">
+        <div class="live-pet live-pet-dog"><span>🐕</span><small>dog care</small></div>
+        <div class="live-pet live-pet-cat"><span>🐈</span><small>cat care</small></div>
+        <div class="live-pet live-pet-bird"><span>🐦</span><small>bird care</small></div>
+        <div class="pet-spark spark-a"></div><div class="pet-spark spark-b"></div><div class="pet-spark spark-c"></div>
+      </div>
       <div class="container hero-content">
         <p class="eyebrow">Purrfect Pantry · Bangladesh</p>
         <h1>Good food, beautifully<br /><em>chosen.</em></h1>
@@ -70,7 +83,7 @@
           <a class="btn btn-primary" href="#shop">Shop the pantry</a>
           <a class="btn btn-ghost" href="#cats">Explore cat food</a>
         </div>
-        <div class="hero-note"><span class="status-dot"></span> Fresh storefront · Easy ordering · Built to grow</div>
+        <div class="hero-note"><span class="status-dot"></span> <b>Live storefront</b> · Easy ordering · Built to grow · <span id="ppHeroTime">--:--</span></div>
       </div>
     </section>
 
@@ -292,5 +305,31 @@
 
   <script>window.PANTRY_API_BASE="";</script>
   <script src="script.js" defer></script>
+
+<script>
+(function(){
+  'use strict';
+  function tick(){
+    const now=new Date();
+    const t=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Dhaka',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);
+    const short=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Dhaka',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
+    const bd=document.getElementById('ppBdTime'), hero=document.getElementById('ppHeroTime');
+    if(bd) bd.textContent=t; if(hero) hero.textContent=short;
+  }
+  function init(){
+    tick(); setInterval(tick,1000);
+    const refresh=document.getElementById('ppRefresh');
+    if(refresh) refresh.addEventListener('click',function(){
+      const s=document.getElementById('ppLiveStatus');
+      if(s) s.textContent='Refreshing…';
+      window.setTimeout(function(){
+        if(s) s.textContent='Storefront online';
+        window.location.reload();
+      },350);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
 </body>
 </html>

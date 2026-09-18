@@ -25,6 +25,10 @@ Build: Rescue Center + media capture + country routing + SMS-ready backend + Cus
 - Static website run: PASS
 - Static HTTP check: all main pages and assets returned HTTP 200
 - ZIP integrity: PASS
+- Static asset HTTP smoke check: PASS (index, admin, delivery, returns, terms, privacy, CSS, JS, manifest, logo and hero assets)
+- DOM feature-ID scan: PASS
+- CSS brace-balance check: PASS
+- Small-pet shortcut: FIXED to filter fish/rabbit/hamster/treats
 
 ## Bugs fixed during this QA cycle
 1. Removed duplicate `/api/rescues` and duplicate legacy admin rescue-list route definitions.
