@@ -1,20 +1,26 @@
-# Pantry Website
+# Pantry restored feature build
 
-A GitHub Pages-ready static Pantry web app with an Italian-inspired visual identity and a warm cat/dog/bird hero scene built entirely with HTML/CSS/SVG. No image files or build step are required.
+This GitHub Pages-ready static package restores the Pantry shop + community rescue workflow and keeps the new Italian-inspired identity with the animated cat/dog/bird hero scene.
 
-## Included
-- Premium Italian-inspired Pantry branding and custom SVG logo
-- Animated cat, dog and bird hero background, drawn in CSS
-- Responsive navigation for desktop and mobile
-- Category filters, search, sorting and product cards
-- Cart with quantity controls and browser persistence when localStorage is available
-- Graceful fallback when browser storage is restricted
-- Rescue Desk for cat, dog and bird reports
-- Photo/video file picker in the rescue form
-- Demo rescue map panel
+## Restored / included
+- Live mode bar with Bangladesh time + refresh
+- Italian-inspired custom SVG Pantry logo
+- Animated cat, dog and bird hero scene using CSS only
+- Shop catalog, categories, search, sorting and details
+- Persistent cart with quantity controls
+- Checkout and demo order history
+- Rescue Desk for cat/dog/bird
+- Severity + country routing
+- Browser location capture (when permission is granted)
+- Photo/video evidence preview
+- Rescue map-style demo with report pins and browser-location pin
+- Operator alert preparation workflow
+- Recent rescue feed
+- Responsive mobile menu and layout
+- Graceful localStorage fallback
 
-## GitHub Pages
-Upload `index.html`, `styles.css`, `app.js`, and `README.md` to the repository root, then enable GitHub Pages from the repository settings.
+## Production notes
+Checkout/payment and operator SMS/webhook delivery are front-end placeholders. A real deployment should connect a secure backend, payment provider, verified map service, authentication, verified animal-care directory and an approved SMS/notification gateway.
 
-## Important
-The checkout and rescue workflows are front-end demo flows. A production deployment should connect them to a secure backend, real payment provider, verified map/geolocation service, notification channel, authentication, and a proper operator/rescue workflow.
+## Deploy
+Upload the three files to your GitHub Pages repository root and enable Pages.
