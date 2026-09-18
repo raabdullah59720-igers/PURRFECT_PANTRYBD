@@ -1,40 +1,296 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-BD">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pantry, a neighborhood shop with a community animal-care desk.">
-<title>Pantry | Everyday Goodness</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#651f2b" />
+  <meta name="description" content="Purrfect Pantry is a Bangladesh-focused pet-food store for cats, dogs, birds, fish, rabbits and small pets, built for easy discovery, clear pricing and future product expansion." />
+  <meta property="og:title" content="Purrfect Pantry | Premium Pet Food" />
+  <meta property="og:description" content="Curated pet food for cats, dogs, birds, fish, rabbits and small pets with a refined, easy-to-shop experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Purrfect Pantry | Premium Pet Food Bangladesh</title>
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/logo-mark.png" />
+  <link rel="apple-touch-icon" href="assets/logo-mark.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="top-live"><div class="shell livebar"><span><i class="live-dot"></i><b>LIVE MODE</b> <span id="liveText">System online</span></span><span class="live-meta">Bangladesh time <b id="bdTime">--:--:--</b> · <span id="todayText">--</span></span><button id="refreshBtn" class="refresh-btn" title="Refresh live data">↻ Refresh</button></div></div>
-<header class="site-header"><div class="shell nav-wrap">
-<a class="brand" href="#home" aria-label="Pantry home"><svg class="brand-mark" viewBox="0 0 96 96" role="img" aria-label="Pantry logo"><circle cx="48" cy="48" r="43" class="logo-ring"/><path d="M20 57c8 9 18 13 28 13s20-4 28-13" class="logo-line"/><path d="M29 49c0-13 8-24 19-24s19 11 19 24" class="logo-line"/><path d="M39 35c4-7 8-10 15-12-2 7-5 12-12 15" class="logo-leaf"/><circle cx="34" cy="48" r="3" class="logo-dot"/><circle cx="62" cy="48" r="3" class="logo-dot"/><path d="M41 57c4 4 10 4 14 0" class="logo-line"/></svg><span class="brand-copy"><strong>Pantry</strong><small>GOOD THINGS, CLOSE TO HOME</small></span></a>
-<nav class="desktop-nav" id="desktop-nav" aria-label="Primary navigation"><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#orders">Orders</a><a href="#rescue">Rescue Desk</a><a href="#about">About</a></nav>
-<div class="nav-actions"><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="cart-btn" id="cartBtn" aria-label="Open cart">Cart <span id="cartCount">0</span></button><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="desktop-nav">☰</button></div>
-</div></header>
-<main id="home">
-<section class="hero"><div class="pet-scene" aria-hidden="true"><div class="sun-glow"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div><div class="vine vine-a"></div><div class="vine vine-b"></div><div class="pet pet-cat"><div class="tail"></div><div class="body"></div><div class="head"></div><div class="ear e1"></div><div class="ear e2"></div><div class="eye eye1"></div><div class="eye eye2"></div><div class="nose"></div></div><div class="pet pet-dog"><div class="dog-body"></div><div class="dog-head"></div><div class="dog-ear"></div><div class="dog-eye"></div><div class="dog-nose"></div><div class="dog-tail"></div></div><div class="pet pet-bird"><div class="bird-body"></div><div class="bird-wing"></div><div class="bird-head"></div><div class="bird-eye"></div><div class="bird-beak"></div></div><div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div></div>
-<div class="shell hero-content"><div class="eyebrow">NEIGHBORHOOD PANTRY · 2026</div><h1>Everyday essentials,<br><em>with a little more heart.</em></h1><p>Shop daily essentials, track your orders, and reach the community animal-care desk from one warm, responsive web app.</p><div class="hero-actions"><a class="btn btn-dark" href="#shop">Shop the pantry</a><a class="btn btn-light" href="#rescue">Report a rescue</a></div><div class="hero-note"><span class="live-dot"></span> <b>Live mode:</b> catalog, cart, order status & rescue desk active</div></div>
-<div class="hero-card"><div class="hero-card-top"><span>Pantry Live</span><span id="heroUpdated">Updated now</span></div><strong>Good food.<br>Good care.</strong><div class="mini-stats"><span><b id="productCount">0</b><small>Products</small></span><span><b id="rescueCount">0</b><small>Rescue reports</small></span><span><b id="orderCount">0</b><small>Orders</small></span></div></div></section>
-<section class="section" id="categories"><div class="shell"><div class="section-head"><div><div class="eyebrow">EXPLORE</div><h2>Shop by need.</h2></div><a href="#shop" class="text-link">View all products →</a></div><div class="category-grid"><button class="category-card category-grocery" data-filter="Grocery"><span class="category-icon">✦</span><strong>Grocery</strong><small>Kitchen staples & fresh picks</small></button><button class="category-card category-snacks" data-filter="Snacks"><span class="category-icon">◌</span><strong>Snacks</strong><small>Little treats for every mood</small></button><button class="category-card category-home" data-filter="Home"><span class="category-icon">⌂</span><strong>Home care</strong><small>Everyday household helpers</small></button><button class="category-card category-care" data-filter="Care"><span class="category-icon">♡</span><strong>Personal care</strong><small>Simple, useful, gentle</small></button></div></div></section>
-<section class="section section-shop" id="shop"><div class="shell"><div class="shop-toolbar"><div><div class="eyebrow">SHOP</div><h2>Featured essentials</h2><p class="muted-line" id="catalogStatus">Catalog loaded.</p></div><div class="toolbar-right"><label class="search-field"><span>⌕</span><input id="searchInput" placeholder="Search products..." autocomplete="off"></label><select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div></div><div class="filter-row"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Grocery">Grocery</button><button class="filter" data-filter="Snacks">Snacks</button><button class="filter" data-filter="Home">Home</button><button class="filter" data-filter="Care">Care</button></div><div class="product-grid" id="productGrid"></div></div></section>
-<section class="section order-section" id="orders"><div class="shell"><div class="section-head"><div><div class="eyebrow">ORDER CENTER</div><h2>Your Pantry orders.</h2><p class="muted-line">Orders created in this browser are stored locally for the demo.</p></div><button class="btn btn-light" id="clearOrdersBtn">Clear demo orders</button></div><div id="ordersList" class="orders-grid"></div></div></section>
-<section class="story-banner" id="about"><div class="shell story-grid"><div><div class="eyebrow">WHY PANTRY</div><h2>A little store with a wider purpose.</h2><p>Pantry combines a practical neighborhood shop with a community-first animal-care reporting desk. The interface is designed so the store experience and rescue workflow remain separate, clear and easy to use.</p><a class="btn btn-dark" href="#rescue">See the rescue desk</a></div><div class="story-orbit"><div class="orbit-ring ring1"></div><div class="orbit-ring ring2"></div><div class="orbit-core">♡<span>care<br>connect<br>continue</span></div></div></div></section>
-<section class="section rescue-section" id="rescue"><div class="shell"><div class="section-head"><div><div class="eyebrow">COMMUNITY CARE</div><h2>Rescue Desk</h2><p class="muted-line">Report a cat, dog or bird, capture evidence, mark the location and route the alert to the appropriate country workflow.</p></div><div class="rescue-status"><span class="live-dot"></span> <b id="rescueDeskStatus">LIVE</b><span id="rescueDeskClock">--:--</span></div></div>
-<div class="rescue-dashboard"><div class="rescue-panel"><div class="panel-title"><span>1 · Report</span><span class="step-state">READY</span></div><form id="rescueForm" class="drawer-form"><div class="two-col"><label>Animal type<select id="animalType"><option>Cat</option><option>Dog</option><option>Bird</option></select></label><label>Severity<select id="animalSeverity"><option>Urgent</option><option>High</option><option>Normal</option></select></label></div><label>Country<select id="animalCountry"><option value="Bangladesh">Bangladesh</option><option value="India">India</option><option value="Pakistan">Pakistan</option><option value="Nepal">Nepal</option><option value="Sri Lanka">Sri Lanka</option><option value="Other">Other</option></select></label><label>Location<input id="animalLocation" placeholder="Area / landmark" required><small class="helper">Use the location button to request your browser's current position.</small></label><div class="inline-actions"><button type="button" class="btn btn-light" id="locateBtn">⌖ Use my location</button><span id="geoStatus" class="helper">Location not set</span></div><label>What did you see?<textarea id="animalNotes" rows="4" placeholder="Injured, trapped, stray, needs food, etc." required></textarea><label>Photo / video evidence<input id="animalMedia" type="file" accept="image/*,video/*" multiple></label><div id="mediaPreview" class="media-preview" aria-live="polite"></div><button class="btn btn-dark full">Submit rescue report</button><p class="form-note">Demo note: evidence is previewed locally. Real operator notification/SMS requires a secure backend and approved messaging gateway.</p></form></div>
-<div class="rescue-panel"><div class="panel-title"><span>2 · Live map</span><span class="step-state">MONITOR</span></div><div class="map-box" id="rescueMap"><div class="map-grid"></div><div class="road r1"></div><div class="road r2"></div><div class="road r3"></div><div class="pin pin-a"><span>🐱</span></div><div class="pin pin-b"><span>🐶</span></div><div class="pin pin-c"><span>🐦</span></div><div id="userPin" class="pin user-pin hidden"><span>●</span></div><div class="map-legend"><span><i class="map-live"></i> Live demo area</span><span>📍 Browser location</span></div></div><div class="map-meta"><span><b id="mapReports">3</b> active demo reports</span><button class="text-link" id="refreshMapBtn">Refresh map ↻</button></div></div>
-<div class="rescue-panel operator-panel"><div class="panel-title"><span>3 · Operator routing</span><span class="step-state">AUTO</span></div><div class="route-card"><div class="route-icon">⌁</div><div><b id="routeCountry">Bangladesh</b><p id="routeText">Country-based routing is ready. Verified operator contact details can be connected before production.</p></div></div><div class="operator-row"><span>Alert channel</span><strong id="alertChannel">SMS / webhook (demo)</strong></div><div class="operator-row"><span>Priority</span><strong id="routePriority">URGENT</strong></div><button id="sendAlertBtn" class="btn btn-light full" type="button">Prepare operator alert</button><div id="alertPreview" class="alert-preview">No report prepared yet.</div></div></div>
-<div class="rescue-feed"><div class="feed-head"><div><div class="eyebrow">LIVE FEED</div><h3>Recent community reports</h3></div><span class="live-pill"><i class="live-dot"></i> Updating</span></div><div id="rescueFeed" class="feed-grid"></div></div>
-</div></section>
-<section class="newsletter"><div class="shell newsletter-box"><div><div class="eyebrow">STAY IN THE LOOP</div><h2>New stock. Local updates. Rescue stories.</h2></div><form id="subscribeForm" class="subscribe"><input type="email" id="emailInput" placeholder="Your email address" required><button class="btn btn-dark">Join</button></form></div></section>
-</main>
-<footer class="footer"><div class="shell footer-grid"><div class="brand footer-brand"><svg class="brand-mark" viewBox="0 0 96 96"><circle cx="48" cy="48" r="43" class="logo-ring"/><path d="M20 57c8 9 18 13 28 13s20-4 28-13" class="logo-line"/><path d="M29 49c0-13 8-24 19-24s19 11 19 24" class="logo-line"/><path d="M39 35c4-7 8-10 15-12-2 7-5 12-12 15" class="logo-leaf"/><circle cx="34" cy="48" r="3" class="logo-dot"/><circle cx="62" cy="48" r="3" class="logo-dot"/><path d="M41 57c4 4 10 4 14 0" class="logo-line"/></svg><span class="brand-copy"><strong>Pantry</strong><small>GOOD THINGS, CLOSE TO HOME</small></span></div><div><b>Shop</b><a href="#shop">Featured</a><a href="#categories">Categories</a><a href="#orders">Orders</a></div><div><b>Care</b><a href="#rescue">Rescue desk</a><a href="#about">Our story</a></div><div><b>System</b><span>Live mode</span><span>Responsive</span><span>GitHub Pages ready</span></div></div><div class="shell footer-bottom"><span>© 2026 Pantry.</span><span>Front-end demo · Production SMS/payment integrations require secure backend services.</span></div></footer>
-<div class="overlay" id="overlay"></div>
-<aside class="drawer cart-drawer" id="cartDrawer" aria-label="Shopping cart"><div class="drawer-head"><h3>Your cart</h3><button class="close-btn" data-close="cartDrawer">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">৳0</strong></div><button class="btn btn-dark full" id="checkoutBtn">Continue to checkout</button></aside>
-<aside class="drawer checkout-drawer" id="checkoutDrawer" aria-label="Checkout"><div class="drawer-head"><h3>Checkout</h3><button class="close-btn" data-close="checkoutDrawer">×</button></div><form id="checkoutForm" class="drawer-form"><label>Full name<input id="customerName" required></label><label>Phone<input id="customerPhone" required inputmode="tel"></label><label>Delivery area<input id="customerArea" required></label><label>Delivery note<textarea id="deliveryNote" rows="3" placeholder="Optional note"></textarea></label><div class="checkout-summary"><span>Order total</span><strong id="checkoutTotal">৳0</strong></div><button class="btn btn-dark full">Place demo order</button><p class="form-note">Payment is not connected in this front-end package.</p></form></aside>
-<aside class="drawer product-drawer" id="productDrawer" aria-label="Product details"><div class="drawer-head"><h3 id="productTitle">Product</h3><button class="close-btn" data-close="productDrawer">×</button></div><div id="productDetail"></div></aside>
-<div class="toast" id="toast"></div>
-<script src="app.js"></script>
-</body></html>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">Curated for cats, dogs, birds & small pets · Bangladesh-wide ordering flow · New collection arriving soon</div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <button class="icon-btn mobile-menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <a class="brand" href="#top" aria-label="Purrfect Pantry home">
+        <picture class="brand-logo">
+          <source media="(max-width:720px)" srcset="assets/logo-mark.png" />
+          <img src="assets/logo.png" alt="Purrfect Pantry" loading="eager" decoding="async" />
+        </picture>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#shop">Shop</a>
+        <a href="#cats">Cat Food</a>
+        <a href="#birds">Bird Food</a>
+        <a href="#shop">All Food</a>
+        <a href="#offers">Offers</a>
+        <a href="#rescue">Rescue</a>
+        <a href="#why">Why Purrfect</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" type="button" aria-label="Search products">⌕</button>
+        <button class="cart-btn" id="cartOpen" type="button" aria-label="Open shopping cart"><span class="cart-label">Cart</span><span id="cartCount" aria-label="Items in cart">0</span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="#shop">Shop</a><a href="#cats">Cat Food</a><a href="#birds">Bird Food</a><a href="#offers">Offers</a><a href="#rescue">Rescue</a><a href="#why">Why Purrfect</a><a href="#contact">Contact</a>
+    </div>
+    <div class="searchbar" id="searchBar" hidden>
+      <div class="container searchbar-inner">
+        <input id="searchInput" type="search" placeholder="Search food, brand, weight..." autocomplete="off" />
+        <button class="text-btn" id="searchClose">Close</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-media" role="img" aria-label="Premium Mediterranean-inspired setting with a cat and bird beside pet food bowls"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Purrfect Pantry · Bangladesh</p>
+        <h1>Good food, beautifully<br /><em>chosen.</em></h1>
+        <p class="hero-copy">Everyday nutrition for cats, dogs, birds, fish, rabbits and small pets, curated into one calm, trustworthy shopping experience.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#shop">Shop the pantry</a>
+          <a class="btn btn-ghost" href="#cats">Explore cat food</a>
+        </div>
+        <div class="hero-note"><span class="status-dot"></span> Fresh storefront · Easy ordering · Built to grow</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div><strong>01</strong><span>Cat-first curation</span></div>
+        <div><strong>02</strong><span>Bird essentials</span></div>
+        <div><strong>03</strong><span>Clear pricing</span></div>
+        <div><strong>04</strong><span>Simple checkout</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Shop the pantry</p><h2>Start with what your pet loves.</h2></div>
+          <p class="section-intro">A broader pet-food catalogue is now available, with category-ready pricing and checkout validation for Bangladesh.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card cat-card" id="cats">
+            <div class="category-art" aria-hidden="true"><span class="art-cat">♞</span></div>
+            <div class="category-body"><p class="eyebrow">Pet category</p><h3>Cat Food</h3><p>Dry food, wet meals, kitten-friendly options and treats.</p><button class="arrow-btn filter-cat" data-category="cat">Shop cat food <span>↗</span></button></div>
+          </article>
+          <article class="category-card bird-card" id="birds">
+            <div class="category-art" aria-hidden="true"><span class="art-bird">✦</span></div>
+            <div class="category-body"><p class="eyebrow">Pet category</p><h3>Bird Food</h3><p>Seed blends, daily feed, cockatiel mixes and treats.</p><button class="arrow-btn filter-bird" data-category="bird">Shop bird food <span>↗</span></button></div>
+          </article>
+          <article class="category-card cat-card">
+            <div class="category-art" aria-hidden="true"><span class="art-cat">🐕</span></div>
+            <div class="category-body"><p class="eyebrow">Pet category</p><h3>Dog Food</h3><p>Adult food, puppy formulas, wet meals and treats.</p><button class="arrow-btn filter-dog">Shop dog food <span>↗</span></button></div>
+          </article>
+          <article class="category-card bird-card">
+            <div class="category-art" aria-hidden="true"><span class="art-bird">🐟</span></div>
+            <div class="category-body"><p class="eyebrow">Pet category</p><h3>Fish & Small Pets</h3><p>Fish food, rabbit hay, hamster mixes and training treats.</p><button class="arrow-btn filter-small">Shop small-pet food <span>↗</span></button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="featured">
+      <div class="container">
+        <div class="section-head compact">
+          <div><p class="eyebrow">Curated shelf</p><h2>Featured products</h2></div>
+          <a class="text-link" href="#all-products">View all products ↗</a>
+        </div>
+        <div class="filter-row" id="all-products">
+          <button class="filter active" data-filter="all">All Food</button><button class="filter" data-filter="cat">Cat</button><button class="filter" data-filter="dog">Dog</button><button class="filter" data-filter="bird">Bird</button><button class="filter" data-filter="fish">Fish</button><button class="filter" data-filter="rabbit">Rabbit</button><button class="filter" data-filter="hamster">Hamster</button><button class="filter" data-filter="treats">Treats</button>
+        </div>
+        <div class="catalog-search" role="search" aria-label="Search the food catalogue">
+          <label class="catalog-search-box" for="catalogSearchInput">
+            <span aria-hidden="true">⌕</span>
+            <input id="catalogSearchInput" type="search" placeholder="Search food, pet type, flavour, brand or pack size..." autocomplete="off" aria-controls="productGrid" />
+            <button type="button" class="catalog-search-clear" id="catalogSearchClear" aria-label="Clear search" hidden>×</button>
+          </label>
+          <span class="catalog-search-hint" id="catalogSearchHint">25 food listings · Try “cat”, “chicken”, “1 kg” or a product name.</span>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>No products match that search yet.</div>
+      </div>
+    </section>
+
+    <section class="section offer" id="offers">
+      <div class="container offer-inner">
+        <div><p class="eyebrow">Featured offer</p><h2>Build a calmer refill routine.</h2><p>Keep this offer area ready for your first verified promotion, bundle, or seasonal campaign.</p></div>
+        <div class="offer-card"><span>Offer zone</span><strong>Ready</strong><small>Add your verified promotion here before launch.</small><a href="#shop" class="btn btn-secondary">Browse products</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">Why Purrfect Pantry</p><h2>Trust, without the theatre.</h2></div><p class="section-intro">The storefront is designed to reduce hesitation from Facebook and Instagram traffic: clear categories, visible prices, human support and a checkout that stays simple.</p></div>
+        <div class="benefit-grid">
+          <article><span class="benefit-no">01</span><h3>Curated, not crowded</h3><p>Launch categories stay focused so shoppers can find the right shelf quickly.</p></article>
+          <article><span class="benefit-no">02</span><h3>Bangladesh-ready</h3><p>Checkout is prepared for COD first, with bKash and Nagad integration points reserved for the next phase.</p></article>
+          <article><span class="benefit-no">03</span><h3>Designed to scale</h3><p>Future animal categories can be added as data, not as a redesign.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delivery-section">
+      <div class="container delivery-grid">
+        <div class="delivery-copy"><p class="eyebrow">Delivery & ordering</p><h2>A familiar checkout for Bangladesh.</h2><p>Keep the final step clean: select items, confirm quantity, add delivery details, then review the order before submission.</p><div class="payment-pills"><span>Cash on Delivery</span><span>bKash slot</span><span>Nagad slot</span></div></div>
+        <div class="delivery-panel"><div><strong>Order status</strong><span class="live-pill"><i></i> storefront ready</span></div><p>Real payment processing should be connected only after merchant credentials and delivery rules are configured.</p><div class="mini-rule"></div><p class="fine">No fake payment badge. No invented delivery promise. Just a clear handoff to the next implementation stage.</p></div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-head compact">
+          <div><p class="eyebrow">Customer voice</p><h2>Tell us what you think.</h2></div>
+          <p class="section-intro">Leave a written comment or use your microphone to send the shop a short voice message. Your words stay close to the customer experience.</p>
+        </div>
+        <div class="reviews-layout customer-voice-grid">
+          <div class="review-form-card">
+            <div class="card-kicker">Customer comment</div>
+            <form id="reviewForm" class="review-form">
+              <div class="form-row-two">
+                <label>Name<input id="reviewName" name="name" required maxlength="60" autocomplete="name" placeholder="Your name"></label>
+                <label>Rating<select id="reviewRating" name="rating" required><option value="5">★★★★★ · 5</option><option value="4">★★★★☆ · 4</option><option value="3">★★★☆☆ · 3</option><option value="2">★★☆☆☆ · 2</option><option value="1">★☆☆☆☆ · 1</option></select></label>
+              </div>
+              <label>Product (optional)<input id="reviewProduct" name="product" maxlength="80" placeholder="Product name"></label>
+              <label>Your comment<textarea id="reviewComment" name="comment" required maxlength="500" rows="5" placeholder="Tell other customers what you liked..."></textarea></label>
+              <div class="review-form-foot"><span id="reviewCharCount" class="tiny-note">0 / 500</span><button class="btn btn-primary" type="submit">Post comment</button></div>
+            </form>
+          </div>
+
+          <div class="voicemail-card customer-voice-record">
+            <div class="card-kicker">Voice mail</div>
+            <p class="voice-intro">Prefer speaking? Record a short message, listen back, then send it to the shop when the API is connected. Without an API, the Save button keeps a downloadable local copy on this device.</p>
+            <div class="voice-fields">
+              <label>Name (optional)<input id="voiceName" maxlength="60" autocomplete="name" placeholder="Your name"></label>
+              <label>Phone (optional)<input id="voicePhone" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+            </div>
+            <div class="voice-status"><span class="voice-dot" id="voiceDot"></span><strong id="voiceStatus">Ready to record</strong><span id="voiceTimer" class="voice-timer">00:00</span></div>
+            <div class="voice-actions"><button class="btn btn-primary" id="voiceStart" type="button">● Start recording</button><button class="btn outline" id="voiceStop" type="button" disabled>■ Stop</button><button class="btn outline" id="voiceSend" type="button" disabled>Save voicemail</button><button class="btn outline" id="voiceDelete" type="button" disabled>Delete</button></div>
+            <audio id="voicePlayback" controls hidden></audio>
+            <p id="voiceNote" class="tiny-note">Up to 60 seconds. Microphone permission is required. Keep the page open while recording.</p>
+          </div>
+
+          <div class="review-list-card customer-voice-recent">
+            <div class="list-head"><div><div class="card-kicker">Recent customer comments</div><p id="reviewSummary" class="tiny-note">No customer reviews yet.</p></div><button class="text-btn" id="clearMyReviews" type="button">Clear my comments</button></div>
+            <div id="reviewList" class="review-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rescue-section" id="rescue">
+      <div class="container">
+        <div class="section-head compact">
+          <div><p class="eyebrow">Rescue center</p><h2>Mark an animal that needs help.</h2></div>
+          <p class="section-intro">For an injured or vulnerable cat, dog or bird, place a rescue marker on the map, share the situation, and let other helpers see where assistance is needed.</p>
+        </div>
+        <div class="rescue-layout">
+          <div class="rescue-map-card">
+            <div class="map-toolbar">
+              <div><div class="card-kicker">Live rescue map</div><p id="rescueMapHint" class="tiny-note">Click the map to place a marker, or use your device location.</p></div>
+              <div class="map-actions"><button class="btn outline" id="rescueLocate" type="button">Use my location</button><button class="text-btn" id="rescueResetMap" type="button">Bangladesh view</button></div>
+            </div>
+            <div id="rescueMap" class="rescue-map" aria-label="Rescue map for cat, dog and bird help requests"></div>
+            <div id="rescueMapFallback" class="rescue-map-fallback" hidden>
+              <strong>Map library could not load.</strong>
+              <span>You can still submit a rescue request using the latitude and longitude fields below.</span>
+            </div>
+            <div class="rescue-legend"><span><i class="legend-dot cat"></i>Cat</span><span><i class="legend-dot dog"></i>Dog</span><span><i class="legend-dot bird"></i>Bird</span><span><i class="legend-dot urgent"></i>Urgent</span></div>
+          </div>
+
+          <div class="rescue-form-card">
+            <div class="card-kicker">Create rescue marker</div>
+            <form id="rescueForm" class="rescue-form">
+              <div class="form-row-two">
+                <label>Animal<select id="rescueAnimal" name="animal" required><option value="cat">Cat</option><option value="dog">Dog</option><option value="bird">Bird</option></select></label>
+                <label>Urgency<select id="rescueUrgency" name="urgency" required><option value="urgent">Urgent</option><option value="high">High</option><option value="normal">Needs help</option></select></label>
+              </div>
+              <label>What happened?<textarea id="rescueDescription" name="description" required maxlength="500" rows="4" placeholder="Example: injured street cat near the pharmacy entrance..."></textarea></label>
+              <div class="form-row-two">
+                <label>Contact name (optional)<input id="rescueName" name="name" maxlength="60" autocomplete="name" placeholder="Your name"></label>
+                <label>Phone (optional)<input id="rescuePhone" name="phone" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+              </div>
+              <div class="form-row-two">
+                <label>Latitude<input id="rescueLat" name="lat" type="number" step="any" min="-90" max="90" placeholder="Map click fills this"></label>
+                <label>Longitude<input id="rescueLng" name="lng" type="number" step="any" min="-180" max="180" placeholder="Map click fills this"></label>
+              </div>
+              <label>Place note (optional)<input id="rescuePlace" name="place" maxlength="120" placeholder="Road, market, landmark or area"></label>
+
+              <div class="rescue-media-box">
+                <div class="rescue-media-head"><div><div class="card-kicker">Photo / live video</div><p class="tiny-note">Attach a photo or a short video so the rescue team can understand the situation. A live camera preview is available on supported devices.</p></div><span id="rescueMediaState" class="media-badge">No media</span></div>
+                <div class="rescue-media-actions"><label class="btn outline media-file-label" for="rescueMediaInput">Choose photo/video</label><input id="rescueMediaInput" name="media" type="file" accept="image/*,video/*" capture="environment" hidden><button class="btn outline" id="rescueCameraOpen" type="button">Open live camera</button><button class="btn outline" id="rescueCameraClose" type="button" hidden>Close camera</button></div>
+                <div id="rescueLiveCamera" class="rescue-live-camera" hidden><video id="rescueCameraPreview" autoplay playsinline muted></video><div class="live-camera-actions"><button class="btn btn-primary" id="rescueTakePhoto" type="button">Take photo</button><button class="btn outline" id="rescueRecordVideo" type="button">Record video</button><button class="btn outline" id="rescueStopVideo" type="button" disabled>Stop recording</button></div></div>
+                <div id="rescueMediaPreview" class="rescue-media-preview" hidden></div>
+                <p id="rescueMediaHint" class="tiny-note">Photo is compressed in the browser before upload. Short video recording is limited to 15 seconds.</p>
+              </div>
+
+              <div class="rescue-route-card"><div><div class="card-kicker">Automatic country routing</div><p id="rescueCountryStatus" class="tiny-note">Choose a map location to detect the country and match configured rescue operators.</p></div><span id="rescueOperatorStatus" class="route-badge">Routing ready</span></div>
+
+              <div class="rescue-submit-row"><span class="tiny-note">Please share only a safe location and avoid putting private personal details in the public description.</span><button class="btn btn-primary" type="submit">Mark & request help</button></div>
+              <p id="rescueFormStatus" class="tiny-note" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="rescue-list-card">
+          <div class="list-head"><div><div class="card-kicker">Active rescue requests</div><p id="rescueSummary" class="tiny-note">No active rescue requests yet.</p></div><button class="text-btn" id="refreshRescues" type="button">Refresh markers</button></div>
+          <div id="rescueList" class="rescue-list" aria-live="polite"></div>
+        </div>
+
+        <div class="rescue-help-strip">
+          <div><strong>Need immediate help?</strong><span>Call the shop helpline and share the rescue marker location.</span></div>
+          <a class="btn btn-secondary" href="tel:+8801755800203">Helpline · 01755-800203</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section newsletter" id="contact">
+      <div class="container newsletter-inner"><div><p class="eyebrow">Stay close</p><h2>New stock, offers & care notes.</h2><p>Use this space later for email, Messenger or WhatsApp lead capture.</p></div><form id="newsletterForm"><input type="email" required placeholder="Your email address" aria-label="Email address"><button class="btn btn-primary" type="submit">Join the list</button></form></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Purrfect Pantry"><p>Premium pet food for cats, dogs, birds, fish and small pets, thoughtfully presented for Bangladesh.</p><div class="social-links"><a href="#" aria-label="Facebook">Facebook</a><a href="#" aria-label="Instagram">Instagram</a></div></div>
+      <div><h4>Shop</h4><a href="#cats">Cat Food</a><a href="#birds">Bird Food</a><a href="#offers">Offers</a></div>
+      <div><h4>Help</h4><a href="delivery.html">Delivery</a><a href="returns.html">Returns & Refunds</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+      <div><h4>Contact</h4><p>Bangladesh</p><p><strong>Helpline: <a href="tel:+8801755800203">01755-800203</a></strong></p><a href="tel:+8801755800203">Call customer care ↗</a><a href="#reviews">Write a review ↗</a><a href="#reviews" data-open-voicemail>Leave a voicemail ↗</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Purrfect Pantry</span><span>Built for a faster, cleaner pet-food storefront.</span></div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">Shopping cart</p><h2>Your cart</h2><p class="cart-subline" id="cartSubline">0 items</p></div><button class="icon-btn" id="cartClose" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="drawer-foot"><div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">৳0</strong></div><button class="btn btn-primary btn-block" id="checkoutOpen">Proceed to checkout</button><button class="text-btn btn-block" id="clearCart">Clear cart</button></div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <dialog class="modal" id="productModal"><button class="icon-btn modal-close" id="productModalClose" aria-label="Close product">×</button><div id="productModalBody"></div></dialog>
+  <dialog class="modal checkout-modal" id="checkoutModal"><button class="icon-btn modal-close" id="checkoutClose" aria-label="Close checkout">×</button><div class="checkout-grid"><div><p class="eyebrow">Mobile verification</p><h2>Confirm your order</h2><p class="muted">Enter your delivery details first. A six-digit OTP is requested only after your Bangladesh mobile number is validated.</p><div id="checkoutStage"><form id="checkoutForm"><label>Full name<input required name="name" autocomplete="name"></label><label>Mobile number<input required name="phone" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></label><label>Delivery address<textarea required name="address" rows="4" autocomplete="street-address"></textarea></label><label>Payment preference<select name="payment"><option>Cash on Delivery</option><option>bKash</option><option>Nagad</option></select></label><button class="btn btn-primary btn-block" type="submit">Send OTP</button></form></div><div id="otpStage" hidden><div class="otp-card"><p class="eyebrow">OTP sent</p><h3>Verify your mobile</h3><p class="muted">Enter the six-digit code sent by your configured SMS provider.</p><label>6-digit OTP<input id="otpInput" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="123456"></label><button class="btn btn-primary btn-block" id="verifyOtpBtn" type="button">Verify & place order</button><button class="text-btn btn-block" id="resendOtpBtn" type="button">Resend OTP</button><p class="tiny-note">SMS provider settings remain blank until you connect your provider.</p></div></div></div><div class="checkout-summary"><p class="eyebrow">Cart</p><div id="checkoutSummary"></div><div class="total-row"><span>Total</span><strong id="checkoutTotal">৳0</strong></div></div></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>window.PANTRY_API_BASE="";</script>
+  <script src="script.js" defer></script>
+</body>
+</html>
