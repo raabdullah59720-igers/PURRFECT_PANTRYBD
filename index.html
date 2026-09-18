@@ -11,7 +11,8 @@
   <meta property="og:image" content="assets/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Purrfect Pantry | Premium Pet Food Bangladesh</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/logo-mark.png" />
+  <link rel="apple-touch-icon" href="assets/logo-mark.png" />
   <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +27,10 @@
     <div class="container nav-wrap">
       <button class="icon-btn mobile-menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
       <a class="brand" href="#top" aria-label="Purrfect Pantry home">
-        <img src="assets/logo.png" alt="Purrfect Pantry" />
+        <picture class="brand-logo">
+          <source media="(max-width:720px)" srcset="assets/logo-mark.png" />
+          <img src="assets/logo.png" alt="Purrfect Pantry" loading="eager" decoding="async" />
+        </picture>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="#shop">Shop</a>
@@ -39,7 +43,7 @@
       </nav>
       <div class="nav-actions">
         <button class="icon-btn" id="searchToggle" type="button" aria-label="Search products">⌕</button>
-        <button class="cart-btn" id="cartOpen" type="button" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+        <button class="cart-btn" id="cartOpen" type="button" aria-label="Open shopping cart"><span class="cart-label">Cart</span><span id="cartCount" aria-label="Items in cart">0</span></button>
       </div>
     </div>
     <div class="mobile-nav" id="mobileNav" hidden>
@@ -174,14 +178,14 @@
   </footer>
 
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="drawer-head"><div><p class="eyebrow">Your bag</p><h2>Order summary</h2></div><button class="icon-btn" id="cartClose" aria-label="Close cart">×</button></div>
+    <div class="drawer-head"><div><p class="eyebrow">Shopping cart</p><h2>Your cart</h2><p class="cart-subline" id="cartSubline">0 items</p></div><button class="icon-btn" id="cartClose" aria-label="Close cart">×</button></div>
     <div class="cart-items" id="cartItems"></div>
-    <div class="drawer-foot"><div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">৳0</strong></div><button class="btn btn-primary btn-block" id="checkoutOpen">Proceed to checkout</button><button class="text-btn btn-block" id="clearCart">Clear bag</button></div>
+    <div class="drawer-foot"><div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">৳0</strong></div><button class="btn btn-primary btn-block" id="checkoutOpen">Proceed to checkout</button><button class="text-btn btn-block" id="clearCart">Clear cart</button></div>
   </aside>
   <div class="scrim" id="scrim" hidden></div>
 
   <dialog class="modal" id="productModal"><button class="icon-btn modal-close" id="productModalClose" aria-label="Close product">×</button><div id="productModalBody"></div></dialog>
-  <dialog class="modal checkout-modal" id="checkoutModal"><button class="icon-btn modal-close" id="checkoutClose" aria-label="Close checkout">×</button><div class="checkout-grid"><div><p class="eyebrow">Secure-style review</p><h2>Confirm your order</h2><p class="muted">This launch build stores the basket in your browser. Connect your real payment gateway and delivery rules before accepting live payments.</p><form id="checkoutForm"><label>Full name<input required name="name" autocomplete="name"></label><label>Mobile number<input required name="phone" inputmode="tel" autocomplete="tel"></label><label>Delivery address<textarea required name="address" rows="4" autocomplete="street-address"></textarea></label><label>Payment preference<select name="payment"><option>Cash on Delivery</option><option>bKash</option><option>Nagad</option></select></label><button class="btn btn-primary btn-block" type="submit">Place order request</button></form></div><div class="checkout-summary"><p class="eyebrow">Bag</p><div id="checkoutSummary"></div><div class="total-row"><span>Total</span><strong id="checkoutTotal">৳0</strong></div></div></div></dialog>
+  <dialog class="modal checkout-modal" id="checkoutModal"><button class="icon-btn modal-close" id="checkoutClose" aria-label="Close checkout">×</button><div class="checkout-grid"><div><p class="eyebrow">Mobile verification</p><h2>Confirm your order</h2><p class="muted">Enter your delivery details first. A six-digit OTP is requested only after your Bangladesh mobile number is validated.</p><div id="checkoutStage"><form id="checkoutForm"><label>Full name<input required name="name" autocomplete="name"></label><label>Mobile number<input required name="phone" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></label><label>Delivery address<textarea required name="address" rows="4" autocomplete="street-address"></textarea></label><label>Payment preference<select name="payment"><option>Cash on Delivery</option><option>bKash</option><option>Nagad</option></select></label><button class="btn btn-primary btn-block" type="submit">Send OTP</button></form></div><div id="otpStage" hidden><div class="otp-card"><p class="eyebrow">OTP sent</p><h3>Verify your mobile</h3><p class="muted">Enter the six-digit code sent by your configured SMS provider.</p><label>6-digit OTP<input id="otpInput" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="123456"></label><button class="btn btn-primary btn-block" id="verifyOtpBtn" type="button">Verify & place order</button><button class="text-btn btn-block" id="resendOtpBtn" type="button">Resend OTP</button><p class="tiny-note">SMS provider settings remain blank until you connect your provider.</p></div></div></div><div class="checkout-summary"><p class="eyebrow">Cart</p><div id="checkoutSummary"></div><div class="total-row"><span>Total</span><strong id="checkoutTotal">৳0</strong></div></div></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>window.PANTRY_API_BASE="";</script><script src="script.js" defer></script>

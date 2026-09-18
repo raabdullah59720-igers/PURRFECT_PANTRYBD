@@ -30,3 +30,11 @@ The storefront now includes cat, dog, bird, fish, rabbit, hamster and treats cat
 - SMS OTP provider settings remain intentionally blank in `server/.env.example` (`SMS_API_URL`, `SMS_API_KEY`, `SMS_SENDER_ID`) so a real Bangladesh SMS provider can be connected later without changing the checkout UI.
 - Do not publish real API keys in the frontend. Configure SMS credentials only on the backend/server environment.
 - Current catalogue prices are launch/store prices configured for this build, not a claim of an official government live-price feed.
+
+
+## Final stability + cart pass
+- Added a compact `assets/logo-mark.png` for mobile/header favicon use so the brand remains legible at small sizes.
+- Restored the OTP verification UI expected by `script.js`; provider configuration stays blank until a real SMS service is selected.
+- Upgraded the visible storefront control from Bag to Cart and verified quantity, remove, clear-cart, subtotal and localStorage flows in code.
+- Product cards and product details both use the same Add to cart action path; Buy now adds the item and opens checkout.
+- Dog and small-pet category shortcut buttons are wired.
